@@ -3556,7 +3556,7 @@ var Incremancer;
             }
             const e = [];
             for (let t = 0; t < this.skeletons.length; t++) this.skeletons[t].flags.dead ? (this.discardedSprites.push(this.skeletons[t]), g.removeChild(this.skeletons[t])) : (e.push(this.skeletons[t]), this.skeletons[t].x = this.graveyard.sprite.x, this.skeletons[t].zIndex = this.skeletons[t].y = this.graveyard.sprite.y + (this.graveyard.level > 2 ? 8 : 0), this.skeletons[t].target = null, this.skeletons[t].state = be.lookingForTarget, this.skeletons[t].timer.scan = 0);
-            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .001, this.model.level < this.persistent.level && (this.lootChance *= .5), this.model.level > 2 * this.persistent.level && (this.lootChance *= 1.5)
+            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .00125, this.model.level < this.persistent.level && (this.lootChance *= .33), this.model.level > 2 * this.persistent.level && (this.lootChance *= 1.75)
         }
         spawnCreature() {
             let e;
@@ -3784,7 +3784,7 @@ var Incremancer;
             const t = Math.round(6 * Math.random()) + 1;
             let s = this.rarity.common;
             const i = [];
-            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
+            if (Math.random() < .25 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .25 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .125 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
                 s = this.rarity.divine;
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
@@ -5278,13 +5278,13 @@ var Incremancer;
                     id: -7
                 });
                 const b = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.ring.id));
-                b.length > 0 ? this.equipped.push([e[0]]) : this.equipped.push([{
+                b.length > 0 ? j.push(b[0]) : j.push({
                     name: "Ring Slot",
                     s: i.lootPositions.ring.id,
                     id: -8
                 }]);
                 const p = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.armband.id));
-                p.length > 0 ? this.equipped.push([e[0]]) : this.equipped.push([{
+                p.length > 0 ? j.push(p[0]) : j.push({
                     name: "Armband Slot",
                     s: i.lootPositions.armband.id,
                     id: -9
