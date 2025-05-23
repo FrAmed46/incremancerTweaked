@@ -4720,7 +4720,7 @@ var Incremancer;
         e && e > 0 && (dt.lootChanceMod = 1 + .04 * e)
     }), (function () {
         const e = dt.talents[this.id];
-        return e && e > 0 ? `Rare loot chance increased by ${10 * e}%` : "Increases the chance for rare loot by 10%"
+        return e && e > 0 ? `Loot increase chance increased by ${4 * e}%` : "Increases the chance for loot improvement by 4% multiplicatively."
     })), new xt(8, "Dark Orb", ft, 10, (function () {
         dt.darkorb = 0;
         const e = dt.talents[this.id];
