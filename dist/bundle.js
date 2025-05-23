@@ -3784,7 +3784,7 @@ var Incremancer;
             const t = Math.floor(Math.random() * 9) + 1;
             let s = this.rarity.common;
             const i = [];
-            if (Math.random() < .25 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .25 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .125 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
+            if (Math.random() < .25 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .125 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .125 * this.lootChanceMod))))) {
                 s = this.rarity.divine;
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
@@ -4717,7 +4717,7 @@ var Incremancer;
     })), new xt(7, "Shiny", ft, 12, (function () {
         dt.lootChanceMod = 1;
         const e = dt.talents[this.id];
-        e && e > 0 && (dt.lootChanceMod = 1 + .1 * e)
+        e && e > 0 && (dt.lootChanceMod = 1 + .04 * e)
     }), (function () {
         const e = dt.talents[this.id];
         return e && e > 0 ? `Rare loot chance increased by ${10 * e}%` : "Increases the chance for rare loot by 10%"
