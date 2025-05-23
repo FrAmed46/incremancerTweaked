@@ -5278,13 +5278,13 @@ var Incremancer;
                     id: -7
                 });
                 const b = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.ring.id));
-                b.length > 0 ? j.push(b[0]) : e.push({
+                b.length > 0 ? e.push(b[0]) : e.push({
                     name: "Ring Slot",
                     s: i.lootPositions.ring.id,
                     id: -8
                 }]);
                 const p = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.armband.id));
-                p.length > 0 ? j.push(p[0]) : e.push({
+                p.length > 0 ? e.push(p[0]) : e.push({
                     name: "Armband Slot",
                     s: i.lootPositions.armband.id,
                     id: -9
