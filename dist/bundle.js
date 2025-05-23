@@ -3556,7 +3556,7 @@ var Incremancer;
             }
             const e = [];
             for (let t = 0; t < this.skeletons.length; t++) this.skeletons[t].flags.dead ? (this.discardedSprites.push(this.skeletons[t]), g.removeChild(this.skeletons[t])) : (e.push(this.skeletons[t]), this.skeletons[t].x = this.graveyard.sprite.x, this.skeletons[t].zIndex = this.skeletons[t].y = this.graveyard.sprite.y + (this.graveyard.level > 2 ? 8 : 0), this.skeletons[t].target = null, this.skeletons[t].state = be.lookingForTarget, this.skeletons[t].timer.scan = 0);
-            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .00125, this.model.level < this.persistent.level && (this.lootChance *= .33), this.model.level > 2 * this.persistent.level && (this.lootChance *= 1.75)
+            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .0015, this.model.level < this.persistent.level && (this.lootChance *= .33), this.model.level > 2 * this.persistent.level && (this.lootChance *= 1.75)
         }
         spawnCreature() {
             let e;
@@ -3781,7 +3781,7 @@ var Incremancer;
             }
         }
         generateLoot(e) {
-            const t = Math.round(6 * Math.random()) + 1;
+            const t = Math.round(8 * Math.random()) + 1;
             let s = this.rarity.common;
             const i = [];
             if (Math.random() < .25 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .25 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .125 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
@@ -5109,7 +5109,7 @@ var Incremancer;
             }
         }, c.constructionLeadsTo = function (e) {
             return h.constructionLeadsTo(e)
-        }, c.howToPlay = ["This started as Chalice's Mod, expanded by CirusDane (called Danemancer), for incremancer - We hope you enjoy the qol changes!", "Energy refills over time. You need 10 energy to spawn a zombie by clicking on the ground.", "Hold shift or control to spawn multiple zombies with a single click.", "Whenever one of your zombies attacks a human you will collect some blood.", "Killing a human or turning them into a zombie will earn you 1 brain.", "You can spend these currencies in the shop to purchase upgrades for your zombie horde.", "Hold shift to buy the maximum affordable number of upgrades.", "The world can be dragged with the mouse to explore it. Or by using the WASD or arrow keys.", "You can zoom in and out using your mouse wheel. Pinch to zoom on mobile."], c.updateMessages = function (e) {
+        }, c.howToPlay = ["Personal modification on Dane's mod by FrAmed, I hope you enjoy x2!","This started as Chalice's Mod, expanded by CirusDane (called Danemancer), for incremancer - We hope you enjoy the qol changes!", "Energy refills over time. You need 10 energy to spawn a zombie by clicking on the ground.", "Hold shift or control to spawn multiple zombies with a single click.", "Whenever one of your zombies attacks a human you will collect some blood.", "Killing a human or turning them into a zombie will earn you 1 brain.", "You can spend these currencies in the shop to purchase upgrades for your zombie horde.", "Hold shift to buy the maximum affordable number of upgrades.", "The world can be dragged with the mouse to explore it. Or by using the WASD or arrow keys.", "You can zoom in and out using your mouse wheel. Pinch to zoom on mobile."], c.updateMessages = function (e) {
             c.message ? (c.messageTimer -= e, c.model.messageQueue.length > 0 && (c.messageTimer -= e), c.messageTimer < 0 && (c.message = !1, c.messageTimer = 4)) : c.model.messageQueue.length > 0 && (c.message = c.model.messageQueue.shift(), c.messageTimer = 4)
         }, c.infusionAmount = 1e3, c.infusionMax = !1, c.infuseRune = function (e, t) {
             if (c.infusionMax) switch (t) {
