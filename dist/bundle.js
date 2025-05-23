@@ -3556,7 +3556,7 @@ var Incremancer;
             }
             const e = [];
             for (let t = 0; t < this.skeletons.length; t++) this.skeletons[t].flags.dead ? (this.discardedSprites.push(this.skeletons[t]), g.removeChild(this.skeletons[t])) : (e.push(this.skeletons[t]), this.skeletons[t].x = this.graveyard.sprite.x, this.skeletons[t].zIndex = this.skeletons[t].y = this.graveyard.sprite.y + (this.graveyard.level > 2 ? 8 : 0), this.skeletons[t].target = null, this.skeletons[t].state = be.lookingForTarget, this.skeletons[t].timer.scan = 0);
-            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .001, this.model.level < this.persistent.level && (this.lootChance *= .5), this.model.level > 2 * this.persistent.level && (this.lootChance *= 1.5)
+            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .00125, this.model.level < this.persistent.level && (this.lootChance *= .33), this.model.level > 2 * this.persistent.level && (this.lootChance *= 1.75)
         }
         spawnCreature() {
             let e;
@@ -3784,7 +3784,7 @@ var Incremancer;
             const t = Math.round(6 * Math.random()) + 1;
             let s = this.rarity.common;
             const i = [];
-            if (Math.random() < .2 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .2 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
+            if (Math.random() < .25 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .25 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .125 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
                 s = this.rarity.divine;
                 const e = a(this.spells.spells, Math.random());
                 i.push(e.id)
@@ -5232,69 +5232,32 @@ var Incremancer;
             isAlive: () => i.isAlive(),
             timer: () => Math.ceil(i.skeletonTimer()),
             updateEquippedItems() {
-                this.equipped = [];
-                const e = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.helmet.id));
-                e.length > 0 ? this.equipped.push([e[0]]) : this.equipped.push([{
-                    name: "Helmet Slot",
-                    s: i.lootPositions.helmet.id,
-                    id: -1
-                }]);
-                const t = [],
-                    s = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.sword.id));
-                s.length > 0 ? t.push(s[0]) : t.push({
-                    name: "Sword Slot",
-                    s: i.lootPositions.sword.id,
-                    id: -2
-                });
-                const a = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.chest.id));
-                a.length > 0 ? t.push(a[0]) : t.push({
-                    name: "Chest Slot",
-                    s: i.lootPositions.chest.id,
-                    id: -3
-                });
-                const r = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.shield.id));
-                r.length > 0 ? t.push(r[0]) : t.push({
-                    name: "Shield Slot",
-                    s: i.lootPositions.shield.id,
-                    id: -4
-                }), this.equipped.push(t);
-                const n = [],
-                    o = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.gloves.id));
-                o.length > 0 ? n.push(o[0]) : n.push({
-                    name: "Gloves Slot",
-                    s: i.lootPositions.gloves.id,
-                    id: -5
-                });
-                const h = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.legs.id));
-                h.length > 0 ? n.push(h[0]) : n.push({
-                    name: "Legs Slot",
-                    s: i.lootPositions.legs.id,
-                    id: -6
-                });
-                const l = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.boots.id));
-                l.length > 0 ? n.push(l[0]) : n.push({
-                    name: "Boots Slot",
-                    s: i.lootPositions.boots.id,
-                    id: -7
-                });
-                const b = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.ring.id));
-                b.length > 0 ? this.equipped.push([e[0]]) : this.equipped.push([{
-                    name: "Ring Slot",
-                    s: i.lootPositions.ring.id,
-                    id: -8
-                }]);
-                const p = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.armband.id));
-                p.length > 0 ? this.equipped.push([e[0]]) : this.equipped.push([{
-                    name: "Armband Slot",
-                    s: i.lootPositions.armband.id,
-                    id: -9
-                }]);
-                this.equipped.push(n), this.equipped.push([{
-                    name: "Destroy Items",
-                    s: -1,
-                    id: -10
-                }])
-            },
+this.equipped = [];
+
+const getEquippedItem = (slotId, name, fallbackId) => {
+    const match = i.persistent.items.find(e => e.q && e.s == slotId);
+    return match || { name: name + " Slot", s: slotId, id: fallbackId };
+};
+
+this.equipped.push([getEquippedItem(i.lootPositions.helmet.id, "Helmet", -1)]);
+
+this.equipped.push([
+    getEquippedItem(i.lootPositions.sword.id, "Sword", -2),
+    getEquippedItem(i.lootPositions.chest.id, "Chest", -3),
+    getEquippedItem(i.lootPositions.shield.id, "Shield", -4)
+]);
+
+this.equipped.push([getEquippedItem(i.lootPositions.ring.id, "Ring", -5)]);
+this.equipped.push([getEquippedItem(i.lootPositions.armband.id, "Armband", -6)]);
+
+this.equipped.push([
+    getEquippedItem(i.lootPositions.gloves.id, "Gloves", -7),
+    getEquippedItem(i.lootPositions.legs.id, "Legs", -8),
+    getEquippedItem(i.lootPositions.boots.id, "Boots", -9)
+]);
+
+this.equipped.push([{ name: "Destroy Items", s: -1, id: -10 }]);
+
 
             inventoryItems: () => i.persistent.items.filter((e => !e.q)).sort(((e, t) => t.r * t.l - e.r * e.l)),
             itemName: e => e.name || i.getLootName(e),
