@@ -3714,7 +3714,14 @@ var Incremancer;
                     s = this.lootPositions.sword.name;
                     break;
                 case this.lootPositions.shield.id:
-                    s = this.lootPositions.shield.name
+                    s = this.lootPositions.shield.name;
+                    break;
+                case this.lootPositions.ring.id:
+                    s = this.lootPositions.ring.name;
+                    break;
+                case this.lootPositions.armband.id:
+                    s = this.lootPositions.armband.name;
+                    break;
             }
             return t + " " + s
         }
