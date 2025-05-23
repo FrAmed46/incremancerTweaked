@@ -3781,7 +3781,7 @@ var Incremancer;
             }
         }
         generateLoot(e) {
-            const t = Math.round(8 * Math.random()) + 1;
+            const t = Math.floor(Math.random() * 9) + 1;
             let s = this.rarity.common;
             const i = [];
             if (Math.random() < .25 * this.lootChanceMod && (s = this.rarity.rare, Math.random() < .25 * this.lootChanceMod && (s = this.rarity.epic, Math.random() < .125 * this.lootChanceMod && (s = this.rarity.legendary, Math.random() < .1 * this.lootChanceMod && (s = this.rarity.ancient, Math.random() < .1 * this.lootChanceMod))))) {
@@ -5278,13 +5278,13 @@ var Incremancer;
                     id: -7
                 });
                 const b = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.ring.id));
-                b.length > 0 ? this.equipped.push([e[0]]) : this.equipped.push([{
+                b.length > 0 ? this.equipped.push([b[0]]) : this.equipped.push([{
                     name: "Ring Slot",
                     s: i.lootPositions.ring.id,
                     id: -8
                 }]);
                 const p = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.armband.id));
-                p.length > 0 ? this.equipped.push([e[0]]) : this.equipped.push([{
+                p.length > 0 ? this.equipped.push([p[0]]) : this.equipped.push([{
                     name: "Armband Slot",
                     s: i.lootPositions.armband.id,
                     id: -9
