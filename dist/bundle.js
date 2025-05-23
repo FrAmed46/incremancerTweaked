@@ -3453,6 +3453,14 @@ var Incremancer;
                 shield: {
                     id: 7,
                     name: "Shield"
+                },
+                ring: {
+                    id: 8,
+                    name: "Ring"
+                },
+                armband: {
+                    id:9,
+                    name: "Armband"
                 }
             }, this.rarity = {
                 common: 1,
