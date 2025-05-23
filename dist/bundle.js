@@ -5334,7 +5334,11 @@ var Incremancer;
                     case i.lootPositions.sword.id:
                         return "sword";
                     case i.lootPositions.shield.id:
-                        return "shield"
+                        return "shield";
+                    case i.lootPositions.ring.id:
+                        return "ring";
+                    case i.lootPositions.armband.id:
+                        return "armband"
                 }
             },
             itemClass: e => e.name ? "empty" : i.getLootClass(e),
