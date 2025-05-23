@@ -5276,10 +5276,23 @@ var Incremancer;
                     name: "Boots Slot",
                     s: i.lootPositions.boots.id,
                     id: -7
+
+                const b = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.ring.id));
+                b.length > 0 ? this.equipped.push([b[0]]) : this.equipped.push([{
+                    name: "Ring Slot",
+                    s: i.lootPositions.boots.id,
+                    id: -8
+
+                const p = i.persistent.items.filter((e => e.q && e.s == i.lootPositions.armband.id));
+                p.length > 0 ? this.equipped.push([p[0]]) : this.equipped.push([{
+                    name: "Armband Slot",
+                    s: i.lootPositions.boots.id,
+                    id: -9
+
                 }), this.equipped.push(n), this.equipped.push([{
                     name: "Destroy Items",
                     s: -1,
-                    id: -8
+                    id: -10
                 }])
             },
             inventoryItems: () => i.persistent.items.filter((e => !e.q)).sort(((e, t) => t.r * t.l - e.r * e.l)),
