@@ -3556,7 +3556,7 @@ var Incremancer;
             }
             const e = [];
             for (let t = 0; t < this.skeletons.length; t++) this.skeletons[t].flags.dead ? (this.discardedSprites.push(this.skeletons[t]), g.removeChild(this.skeletons[t])) : (e.push(this.skeletons[t]), this.skeletons[t].x = this.graveyard.sprite.x, this.skeletons[t].zIndex = this.skeletons[t].y = this.graveyard.sprite.y + (this.graveyard.level > 2 ? 8 : 0), this.skeletons[t].target = null, this.skeletons[t].state = be.lookingForTarget, this.skeletons[t].timer.scan = 0);
-            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .0015, this.model.level < this.persistent.level && (this.lootChance *= .33), this.model.level > 2 * this.persistent.level && (this.lootChance *= 1.75)
+            this.skeletons = e, this.aliveSkeletons = [], this.lootChance = .00125, this.persistent.level > 10 * this.model.level && (this.lootChance *= 1.85), this.persistent.level > 5 * this.model.level && (this.lootChance *= 1.65), this.persistent.level > 2 * this.model.level && (this.lootChance *= 1.33), this.persistent.level < this.model.level / 2 && (this.lootChance *= .2), this.persistent.level < this.model.level && (this.lootChance *= .33)
         }
         spawnCreature() {
             let e;
