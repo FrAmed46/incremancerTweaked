@@ -3512,7 +3512,7 @@ var Incremancer;
             return this.talentPoints - this.getUsedPoints()
         }
         xpForNextLevel() {
-            return 1e3 * Math.pow(this.persistent.level, 2)
+            return 800 * Math.pow(this.persistent.level, 1.9)
         }
         addXp(e) {
             if (this.isAlive() && (this.persistent.xp += e * this.persistent.xpRate, this.persistent.xp > this.xpForNextLevel())) {
