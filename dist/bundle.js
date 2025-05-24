@@ -3854,7 +3854,7 @@ var Incremancer;
         xpForLegendary() {
             let e = 0;
             return this.persistent.items.filter(e => !e.q && e.r == this.rarity.legendary).forEach((function (t) {
-                e += ((t.l * (1 + t.l * 0.001225)) * (1.8 ** t.r) * 15 *)
+                e += ((t.l * (1 + t.l * 0.001225)) * (1.8 ** t.r) * 15)
             })), e
         }
 
