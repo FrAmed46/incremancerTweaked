@@ -1806,17 +1806,17 @@ var Incremancer;
                                  new le(74, "Strider's Mathemagics", this.types.SkeleMove, this.costs.parts, 1e18, 6, 1, 10, "Using Archane Mathemagics you imbue your Skeleton Champion with golem based ligaments. +1 Movement Speed per rank.(In testing)", null, 304)],      
                 this.prestigeUpgrades = [new le(108, "A Small Investment", this.types.startingPC, this.costs.prestigePoints, 10, 1.25, 1, 0, "Each rank gives you an additional 500 blood, 50 brains, and 200 bones when starting a new level.", null, null),
                                          new le(109, "Time Warp", this.types.unlockSpell, this.costs.prestigePoints, 50, 1, 1, 1, "Unlock the Time Warp spell in order to speed up the flow of time.", null, null),
-                                         new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 5, "Each rank reduces the energy cost of summoning a zombie by 1", null, null),
-                                         new le(101, "Blood Storage", this.types.bloodStoragePC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% blood storage for each rank.", null, null),
-                                         new le(102, "Blood Rate", this.types.bloodGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% blood income rate for each rank.", null, null),
-                                         new le(103, "Brain Storage", this.types.brainsStoragePC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% brain storage for each rank.", null, null),
-                                         new le(104, "Brain Rate", this.types.brainsGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% brain income rate for each rank.", null, null),
-                                         new le(105, "Bone Rate", this.types.bonesGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% bones income rate for each rank.", null, null),
-                                         new le(111, "Parts Rate", this.types.partsGainPC, this.costs.prestigePoints, 10, 1.25, .2, 0, "Additional 20% creature parts income rate for each rank.", null, null),
+                                         new le(110, "Master of Death", this.types.energyCost, this.costs.prestigePoints, 1e3, 1, 1, 8, "Each rank reduces the energy cost of summoning a zombie by 1", null, null),
+                                         new le(101, "Blood Storage", this.types.bloodStoragePC, this.costs.prestigePoints, 10, 1.225, .2, 0, "Additional 20% blood storage for each rank.", null, null),
+                                         new le(102, "Blood Rate", this.types.bloodGainPC, this.costs.prestigePoints, 10, 1.225, .2, 0, "Additional 20% blood income rate for each rank.", null, null),
+                                         new le(103, "Brain Storage", this.types.brainsStoragePC, this.costs.prestigePoints, 10, 1.225, .2, 0, "Additional 20% brain storage for each rank.", null, null),
+                                         new le(104, "Brain Rate", this.types.brainsGainPC, this.costs.prestigePoints, 10, 1.225, .2, 0, "Additional 20% brain income rate for each rank.", null, null),
+                                         new le(105, "Bone Rate", this.types.bonesGainPC, this.costs.prestigePoints, 10, 1.225, .2, 0, "Additional 20% bones income rate for each rank.", null, null),
+                                         new le(111, "Parts Rate", this.types.partsGainPC, this.costs.prestigePoints, 10, 1.225, .2, 0, "Additional 20% creature parts income rate for each rank.", null, null),
                                          new le(112, "Auto Construction", this.types.autoconstruction, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically start construction of the cheapest available building option.", null, null),
                                          new le(114, "Auto Shop", this.types.autoshop, this.costs.prestigePoints, 250, 1, 1, 1, "Unlock the ability to automatically purchase items from the shop.", null, null),
-                                         new le(113, "Graveyard Health", this.types.graveyardHealth, this.costs.prestigePoints, 10, 1.25, .1, 0, "Additional 10% graveyard health during boss levels with each rank.", null, null),
-                                         new le(115, "Talent Point", this.types.talentPoint, this.costs.prestigePoints, 100, 1.175, 1, 0, "Additional skeleton talent point", null, null)], oe.instance) return oe.instance;
+                                         new le(113, "Graveyard Health", this.types.graveyardHealth, this.costs.prestigePoints, 10, 1.225, .1, 0, "Additional 10% graveyard health during boss levels with each rank.", null, null),
+                                         new le(115, "Talent Point", this.types.talentPoint, this.costs.prestigePoints, 95, 1.17, 1, 0, "Additional skeleton talent point", null, null)], oe.instance) return oe.instance;
 
             oe.instance = this
         }
