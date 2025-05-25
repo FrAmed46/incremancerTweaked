@@ -3835,7 +3835,7 @@ var Incremancer;
             }
         }
         destroyItem(e) {
-            this.addXp((e.l * (1 + e.l * 0.001225)) * (1.8 ** e.r) * 15);
+            this.addXp((e.l * (1 + e.l * 0.00125)) * (1.85 ** e.r) * 15);
             for (let t = 0; t < this.persistent.items.length; t++) this.persistent.items[t].id === e.id && this.persistent.items.splice(t, 1)
         }
         destroyAllItems() {
@@ -3847,27 +3847,27 @@ var Incremancer;
         xpForItems() {
             let e = 0;
             return this.persistent.items.filter(e => !e.q && e.r != this.rarity.legendary).forEach((function (t) {
-                e += ((t.l * (1 + t.l * 0.001225)) * (1.8 ** t.r) * 15)
+                e += ((t.l * (1 + t.l * 0.00125)) * (1.85 ** t.r) * 15)
             })), e
         }
 
         xpForLegendary() {
             let e = 0;
             return this.persistent.items.filter(e => !e.q && e.r == this.rarity.legendary).forEach((function (t) {
-                e += ((t.l * (1 + t.l * 0.001225)) * (1.8 ** t.r) * 15)
+                e += ((t.l * (1 + t.l * 0.00125)) * (1.85 ** t.r) * 15)
             })), e
         }
 
         xpForAncient() {
             let e = 0;
             return this.persistent.items.filter(e => !e.q && e.r == this.rarity.ancient).forEach((function (t) {
-                e += ((t.l * (1 + t.l * 0.001225)) * (1.8 ** t.r) * 15) 
+                e += ((t.l * (1 + t.l * 0.00125)) * (1.85 ** t.r) * 15) 
             })), e
         }
         xpForDivine() {
             let e = 0;
             return this.persistent.items.filter(e => !e.q && e.r == this.rarity.divine).forEach((function (t) {
-                e += ((t.l * (1 + t.l * 0.001225)) * (1.8 ** t.r) * 15)
+                e += ((t.l * (1 + t.l * 0.00125)) * (1.85 ** t.r) * 15)
             })), e
         }
 
