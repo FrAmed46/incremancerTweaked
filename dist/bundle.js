@@ -2001,7 +2001,7 @@ var Incremancer;
                 case this.constructionTypes.fence:
                     return void (this.gameModel.constructions.fence = 1);
                 case this.constructionTypes.fenceSize:
-                    return void (this.gameModel.fenceRadius += e.effect * e.rank);
+                    return void (this.gameModel.fenceRadius += e.effect * e.rank * 2);
                 case this.constructionTypes.pit:
                     return this.gameModel.bloodMax += 1e6 * e.rank, void (this.gameModel.brainsMax += 1e5 * e.rank);
                 case this.constructionTypes.runesmith:
@@ -4061,7 +4061,7 @@ var Incremancer;
                 for (let e = 0; e < 4; e++) this.fenceTextures.push(PIXI.Texture.from("fencepost" + (e + 1) + ".png"))
             }
             this.fencePosts.forEach((e => e.visible = !1)), this.fence.cacheAsBitmap = !1;
-            const e = Math.round(5 * this.fenceRadius),
+            const e = Math.round(0.4 * this.fenceRadius),
                 t = 2 * Math.PI / e;
             for (let r = 0; r < e; r++) {
                 let e;
