@@ -4061,7 +4061,7 @@ var Incremancer;
                 for (let e = 0; e < 4; e++) this.fenceTextures.push(PIXI.Texture.from("fencepost" + (e + 1) + ".png"))
             }
             this.fencePosts.forEach((e => e.visible = !1)), this.fence.cacheAsBitmap = !1;
-            const e = Math.round(.4 * this.fenceRadius),
+            const e = Math.round(.6 * this.fenceRadius),
                 t = 2 * Math.PI / e;
             for (let r = 0; r < e; r++) {
                 let e;
