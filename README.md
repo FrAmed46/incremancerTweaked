@@ -26,5 +26,6 @@ Slightly lowered the scaling of prestige upgrades (the 20% income and storage sc
 
 Slightly lowered and changed the base price of talent points (100-> 95 and scales by 1.17 per level instead of 1.175)
 
-
+### Miscellaneous
+Fence is 33% bigger!
 
