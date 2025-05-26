@@ -2001,7 +2001,7 @@ var Incremancer;
                 case this.constructionTypes.fence:
                     return void (this.gameModel.constructions.fence = 1);
                 case this.constructionTypes.fenceSize:
-                    return void (this.gameModel.fenceRadius += e.effect * e.rank * 2);
+                    return void (this.gameModel.fenceRadius += e.effect * e.rank * 1.33);
                 case this.constructionTypes.pit:
                     return this.gameModel.bloodMax += 1e6 * e.rank, void (this.gameModel.brainsMax += 1e5 * e.rank);
                 case this.constructionTypes.runesmith:
